@@ -15,14 +15,15 @@ public class Student {
         this.lastName = lastName;
         this.examScores = new ArrayList<>(Arrays.asList(testScores));
     }
+    public Student(){
+        this.firstName = "First Name";
+        this.lastName = "Last Name";
 
-        public String getFirstName() {
-            return firstName;
-        }
+    }
 
-        public String getLastName() {
-        return lastName;
-        }
+        public String getFirstName() {return this.firstName;}
+
+        public String getLastName() {return this.lastName;}
 
 
         public void setFirstName(String firstName) {
@@ -39,8 +40,10 @@ public class Student {
 
         public String getExamScores() {
         String scores ="";
+        int examNum=1;
         for (int i = 0; i < getNumberOfExamsTaken(); i++){
-            scores+= (i+1) + "Exam " + "score was"+ examScores.get(i) +"\n";
+            scores+= "Exam "+ examNum + " -> "+ examScores.get(i) +"\n";
+            examNum++;
         }
         return scores;
         }
@@ -66,8 +69,8 @@ public class Student {
         }
 
         public String toString() {
-        String student = "Student name: " + getFirstName() + getLastName() +"\n" +
-                "Test score: " + getExamScores() + "\n" + "Average test scores: " +
+        String student = "Student name: " + getFirstName() + " " + getLastName() +"\n" +
+                "Test scores: " + getExamScores()  + "Average test scores: " +
                 getAverageExamScore();
 
 
