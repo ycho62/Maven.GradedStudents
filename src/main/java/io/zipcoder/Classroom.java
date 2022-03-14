@@ -18,7 +18,7 @@ public class Classroom {
     }
 
     public Student[] getStudents() {
-        return getStudents();
+        return students;
     }
 
     public Double getAverageExamScore() {
